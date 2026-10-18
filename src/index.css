@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink-primary: #0A2540;
+    --ink-charcoal: #1D1D1F;
+    --ink-secondary: #425466;
+    --border-hairline: #E6EBF1;
+    --bg-canvas: #FAFCFE;
+  }
+
+  html {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    color: var(--ink-charcoal);
+    background-color: var(--bg-canvas);
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, sans-serif;
+    color: #1D1D1F;
+    background-color: #FAFCFE;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #0A2540;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    font-weight: 700;
+  }
+
+  p {
+    max-width: 65ch;
+    line-height: 1.55;
+    color: #425466;
+  }
+
+  /* Force tabular numbers on all price, count, and numeric elements */
+  .tnum,
+  [data-tnum="true"],
+  .price,
+  .cart-count,
+  .currency {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+}
+
+/* Custom crisp hairlines and multi-layered chromatic shadow */
+.hairline-border {
+  border: 1px solid #E6EBF1;
+}
+
+.chromatic-shadow {
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.10), 0 8px 16px -8px rgba(0, 0, 0, 0.12), 0 0 1px 1px rgba(50, 50, 93, 0.04);
+}
+
+.chromatic-shadow-sm {
+  box-shadow: 0 4px 6px -1px rgba(50, 50, 93, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 1px 1px rgba(50, 50, 93, 0.04);
+}
+
+.chromatic-shadow-hover {
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 140ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chromatic-shadow-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 38px -10px rgba(50, 50, 93, 0.14), 0 10px 20px -8px rgba(0, 0, 0, 0.10), 0 0 1px 1px rgba(50, 50, 93, 0.06);
+}
+
+/* Custom Scrollbar for Cart Drawer & Modals */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
